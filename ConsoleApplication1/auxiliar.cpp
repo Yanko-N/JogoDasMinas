@@ -63,13 +63,13 @@ void auxiliar::MainMenu() {
 
 					
 					tabuleiro.printBoard();
-					cout << "GAME OVER!!!";
+					cout << "GAME OVER!!!\n";
 					std::system("pause");
 					break;
 				}
 				if (won && lose) {
 					tabuleiro.printBoard();
-					cout << "Congrats you won!!!";
+					cout << "Congrats you won!!!\n";
 					std::system("pause");
 					break;
 				}
@@ -90,7 +90,7 @@ void auxiliar::MainMenu() {
 		else
 		{
 			//exeption
-			cout << " \n\n\tERROR that's not a valid option";
+			cout << " \n\n\tERROR that's not a valid option\n";
 		}
 
 	} while (!quit);

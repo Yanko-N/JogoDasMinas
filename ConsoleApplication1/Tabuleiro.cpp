@@ -147,10 +147,10 @@ void Tabuleiro::PosicionarBombas() {
 		randomNumbersY[i] = randomy;
 	}
 
-	//for debug purpose shows the position of the minas
-	for (int i = 0; i < this->boardSize; i++) {
-		cout << "[" << randomNumbersX[i] << "," << randomNumbersY[i] << "]\t\n";
-	}
+	////for debug purpose shows the position of the minas
+	//for (int i = 0; i < this->boardSize; i++) {
+	//	cout << "[" << randomNumbersX[i] << "," << randomNumbersY[i] << "]\t\n";
+	//}
 
 	//coloco o tabuleiro tudo a 0
 	for (int l = 0; l < this->boardSize; l++) {
@@ -328,8 +328,8 @@ void Tabuleiro::CheckSpaces(coordsMinas coords) {
 		string aux;
 
 		aux = tabuleiro[coords.l][coords.c];
-		if (aux != "x" && tabuleiroFinal[coords.l][coords.c] == " ") {
-			tabuleiroFinal[coords.c][coords.l] = aux;
+		if (aux != "x") {
+			tabuleiroFinal[coords.l][coords.c] = aux;
 		}
 
 		if (coords.l > 0 && coords.c > 0) {
