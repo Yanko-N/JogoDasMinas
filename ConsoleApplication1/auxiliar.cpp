@@ -1,4 +1,7 @@
 #include "auxiliar.h"
+#include "Tabuleiro.h"
+
+
 int auxiliar:: getBoardSize() {
 	bool quit = false;
 	int boardSize = 0;
@@ -26,4 +29,38 @@ int auxiliar:: getBoardSize() {
 	} while (!quit);
 
 	return boardSize;
+}
+
+void auxiliar::MainMenu() {
+	cout << "\tJogo das Minas \n \t Desenvolvido por Vitor Novo\n";
+	system("pause");
+	bool quit = false;
+	do {
+		system("cls");
+		string op;
+		cout << "\n\t1-Play\n\t2-Quit\n r.:";
+		cin >> op;
+
+		if (op.find("1") != string::npos) {
+
+			Tabuleiro tabuleiro = Tabuleiro(getBoardSize());
+			tabuleiro.PosicionarBombas();
+			tabuleiro.printBoard();
+		
+			system("pause");
+
+		}
+		else if (op.find("2") != string::npos)
+		{
+			//quit option
+			quit = true;
+		}
+		else
+		{
+			//exeption
+			cout << " \n\n\tERROR that's not a valid option";
+		}
+
+	} while (!quit);
+
 }

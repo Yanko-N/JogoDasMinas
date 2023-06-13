@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "Tabuleiro.h"
 
 using namespace std;
 static class auxiliar
@@ -10,5 +11,10 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	int getBoardSize();
+
+	/// <summary>
+	/// Call Main Menu for the Game
+	/// </summary>
+	void MainMenu();
 };
 
