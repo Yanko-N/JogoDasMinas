@@ -5,31 +5,33 @@
 int auxiliar:: GetBoardSize() {
 	bool quit = false;
 	int boardSize = 0;
-
+	string boardInput;
 	do {
-		system("cls");
+		try {
+			system("cls");
 
 
-		cout << "\t What's the size of the board do want to play?";
-		cin >> boardSize;
+			std::cout << "\t What's the size of the board do want to play?";
+			std::cin >> boardInput;
+			boardSize = std::stoi(boardInput);
+			if (boardSize  > 0) {
 
-		if (boardSize > 0) {
+				string quitOp;
+				cout << "\t are you sure this is the correct size of the board?";
+				std::cin >> quitOp;
 
-			string quitOp;
-			cout << "\t are you sure this is the correct size of the board?";
-			cin >> quitOp;
-
-			if (quitOp.find("sim") != string::npos || quitOp.find("yes") != string::npos) {
-				quit = true;
-			}
-			else if (quitOp.find("nao") != string::npos || quitOp.find("no") != string::npos) {
-				//Nothing happpen here
-			}
-			else {
-				cout << "\t Please retry again, anwser Yes, Sim to accept ";
-				system("pause");
+				if (quitOp.find("sim") != string::npos || quitOp.find("yes") != string::npos) {
+					quit = true;
+				}else {
+					std::cout << "\t Please retry again, anwser Yes, Sim to accept ";
+					system("pause");
+				}
 			}
 		}
+		catch (const std::invalid_argument& ex) {
+			std::cout << "\t Please input the correct input";
+		}
+		
 		
 	} while (!quit);
 
